@@ -7,7 +7,7 @@ public class Employee {
     private int id;
 
     // Getter's
-    public int getId() {
+    public int getid() {
         return this.id;
     }
 
