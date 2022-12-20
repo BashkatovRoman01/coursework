@@ -1,7 +1,7 @@
 public class Employee {
     // private field's
     private String FIO;
-    private int Department;
+    private int department;
     private float Salary;
     private static int Counter;
     private int id;
@@ -16,7 +16,7 @@ public class Employee {
     }
 
     public int getDepartment() {
-        return this.Department;
+        return this.department;
     }
 
     public float getSalary() {
@@ -29,7 +29,7 @@ public class Employee {
     }
 
     public void SetDepartment(int dept) {
-        this.Department = dept;
+        this.department = dept;
     }
 
     public void SetSalary(float sal) {
@@ -39,13 +39,13 @@ public class Employee {
     // Constructor
     public Employee(String fio, int dept, float salary) {
         FIO = fio;
-        Department = dept;
+        department = dept;
         Salary = salary;
         id = ++Counter;
     }
 
     @Override
     public String toString() {
-        return "Id: " + id + " Fio: " + FIO + " Dept: " + Department + " Salary: " + Salary;
+        return "Id: " + id + " Fio: " + FIO + " Dept: " + department + " Salary: " + Salary;
     }
 }
