@@ -1,4 +1,6 @@
 public class Main {
+    private static int[] Employee;
+
     public static void main(String[] args) {
         Employee[] empl = new Employee[5];
         empl[0] = new Employee("Иванов Иван Иванович", 1, 25500f);
@@ -12,23 +14,23 @@ public class Main {
         }
         // Найти сумму расходов
         int sum = 0;
-        for (int number : array) {
+        for (int number : Employee) {
             sum += number;
         }
         System.out.println(" Сумма расходов в месяц составила " + sum);
         // Найти максимальный и минимальный расход
-        int min = array[0];
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
+        int min = Employee[0];
+        int max = Employee[0];
+        for (int i = 1; i < Employee.length; i++) {
+            if (Employee[i] < min) {
+                min = Employee[i];
             }
-            if (array[i] > max) {
-                max = array[i];
+            if (Employee[i] > max) {
+                max = Employee[i];
             }
         }
         System.out.println(" Минимальное значение = " + min + "; Максимальное зщанчение = " + max);
         // Найти средний расход
-        System.out.println("Средний расход за месяц составил " + sum / array.length);
+        System.out.println("Средний расход за месяц составил " + sum / Employee.length);
     }
 }
