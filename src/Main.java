@@ -10,5 +10,25 @@ public class Main {
         for (Employee e : empl) {
             System.out.println(e);
         }
+        // Найти сумму расходов
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
+        }
+        System.out.println(" Сумма расходов в месяц составила " + sum);
+        // Найти максимальный и минимальный расход
+        int min = array[0];
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        System.out.println(" Минимальное значение = " + min + "; Максимальное зщанчение = " + max);
+        // Найти средний расход
+        System.out.println("Средний расход за месяц составил " + sum / array.length);
     }
 }
