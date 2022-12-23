@@ -1,52 +1,57 @@
 public class Employee {
     // private field's
-    private String FIO;
+    private String fio;
     private int department;
-    private float Salary;
-    private static int Counter;
+    private float salary;
+    private static int counter;
     private int id;
 
     // Getter's
-    public int getid() {
-        return this.id;
-    }
 
-    public String getFIO() {
-        return this.FIO;
+
+    public String getFio() {
+        return fio;
     }
 
     public int getDepartment() {
-        return this.department;
+        return department;
     }
 
     public float getSalary() {
-        return this.Salary;
+        return salary;
+    }
+
+    public int getId() {
+        return id;
     }
 
     // Setter's
-    public void SetFIO(String fio) {
-        this.FIO = fio;
+
+
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
-    public void SetDepartment(int dept) {
-        this.department = dept;
+    public void setDepartment(int department) {
+        this.department = department;
     }
 
-    public void SetSalary(float sal) {
-        this.Salary = sal;
+    public void setSalary(float salary) {
+        this.salary = salary;
     }
 
     // Constructor
-    public Employee(String fio, int dept, float salary) {
-        FIO = fio;
-        department = dept;
-        Salary = salary;
-        id = ++Counter;
+
+    public Employee(String fio, int department, float salary) {
+        this.fio = fio;
+        this.department = department;
+        this.salary = salary;
+        this.id = ++counter;
     }
 
     @Override
     public String toString() {
-        return "Id: " + id + " Fio: " + FIO + " dept: " + department + " Salary: " + Salary;
+        return "Id: " + id + " Fio: " + fio + " dept: " + department + " Salary: " + salary;
     }
 
 }
