@@ -1,57 +1,82 @@
+import java.util.Objects;
+
 public class Employee {
-    // private field's
-    private String fio;
+    private String lastName;
+    private String name;
+    private String middleName;
     private int department;
-    private float salary;
-    private static int counter;
-    private int id;
+    private double salary;
+    private final long id = count;
+    private static long count = 1L;
 
-    // Getter's
+    public Employee(String lastName, String name, String middleName, int department, double salary) {
+        this.lastName = lastName;
+        this.name = name;
+        this.middleName = middleName;
+        this.department = department;
+        this.salary = salary;
+    }
+    private boolean isDepartment (int department) {
+        if (department.equals("1") ||(department.equals("2") || department.equals("3") || department.equals("4") || department.equals("5")); {
+            return true;
+        }
+        return false;
+    }
+    public String getLastName() {
+        return lastName;
+    }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-    public String getFio() {
-        return fio;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public int getDepartment() {
         return department;
     }
 
-    public float getSalary() {
-        return salary;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    // Setter's
-
-
-    public void setFio(String fio) {
-        this.fio = fio;
-    }
-
     public void setDepartment(int department) {
         this.department = department;
     }
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public double getSalary() {
+        return salary;
     }
 
-    // Constructor
-
-    public Employee(String fio, int department, float salary) {
-        this.fio = fio;
-        this.department = department;
+    public void setSalary(double salary) {
         this.salary = salary;
-        this.id = ++counter;
     }
 
     @Override
     public String toString() {
-        return "Id: " + id + " Fio: " + fio + " dept: " + department + " Salary: " + salary;
+        return " Работник № " + id + " ,ФИО " + lastName + " " + name + " " + middleName + " работает в оделе " + department + "получает зарплату " + String.format("%2f", salary);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return id == employee.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
