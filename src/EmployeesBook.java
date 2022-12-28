@@ -1,5 +1,11 @@
+import Java.util.Arraylist;
 public class EmployeesBook {
-    public static Employee[] employees = new Employee[10];
+    public static Employee[] employees = new Employee[10];{
+        employees [0]= new Employee(" Иванов", " Иван", " Иванович ", "1", " 55000 ");
+        employees [1]= new Employee(" Петров", " Петр", " Петрович ", "2", " 95000 ");
+        employees [2]= new Employee(" Александр", " Александр ", " Александрович ", "3", " 75000 ");
+        employees [3]= new Employee(" Федоров", " Федор", " Федорович ", "4", " 63000 ");
+    }
 
     {
         public void Employee[] addEmployee(Employee employee) {
@@ -66,5 +72,13 @@ public class EmployeesBook {
         return employeeWithMaxSalary;
 
     }
+    public void printAllEmployeeByDepartment (String department) {
+       for (Employee employee: employees) {
+           if (department.equals(employee.getDepartment())) {
+               System.out.println(employee);
+           }
+       }
+    }
+
 }
 }
