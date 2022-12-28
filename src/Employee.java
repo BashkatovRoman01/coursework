@@ -15,6 +15,7 @@ public class Employee {
         this.middleName = middleName;
         this.department = department;
         this.salary = salary;
+        count++;
     }
     private boolean isDepartment (int department) {
         if (department.equals("1") ||(department.equals("2") || department.equals("3") || department.equals("4") || department.equals("5")); {

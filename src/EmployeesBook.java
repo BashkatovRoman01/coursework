@@ -81,4 +81,7 @@ public class EmployeesBook {
     }
 
 }
+
+    public void printAllEmployee() {
+    }
 }
