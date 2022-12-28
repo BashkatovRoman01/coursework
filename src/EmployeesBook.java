@@ -15,7 +15,7 @@ public class EmployeesBook {
         for (i = 0; i < employees.length; i++) {
             if (employees[i]!=null && name.equals(employees[i].getName())
             && lastName.equals(employees[i].getLastName())
-                    && middleName.equals(employees[i].getMiddleName()) {
+                    && middleName.equals(employees[i].getMiddleName())) {
                 employees [i]=null;
                 return;
             }
@@ -47,9 +47,24 @@ public class EmployeesBook {
             }
             throw new RuntimeException( " Нет ни одного работника ");
     }
-        public double getEmployeWithMinSalary () {
-        double min = employees[getFirstNotNullSalaryIndex()].getSalary();
+        public Employee getEmployeeWithMinSalary () {
+        Employee employeeWithMinSalary = employees[getFirstNotNullSalaryIndex];
+        for (int i=getFirstNotNullSalaryIndex()+1; i<employees.length;i++) {
+            if (employees[i]!=null&&employees[i].getSalary()<employeeWithMinSalary.getSalary()) {
+                employeeWithMinSalary=employees[i];
+            }
+        }
+        return employeeWithMinSalary;
     }
+        public Employee getEmployeeWithMaxSalary () {
+        Employee employeeWithMaxSalary = employees[getFirstNotNullSalaryIndex];
+        for (int i=getFirstNotNullSalaryIndex()+1; i<employees.length;i++) {
+            if (employees[i]!=null&&employees[i].getSalary()>employeeWithMaxSalary.getSalary()) {
+                employeeWithMaxSalary=employees[i];
+            }
+        }
+        return employeeWithMaxSalary;
 
     }
+}
 }
