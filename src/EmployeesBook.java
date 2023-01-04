@@ -47,14 +47,15 @@ public class EmployeesBook {
         System.out.println(sumSalary());
     }
         public int getFirstNotNullSalaryIndex (){
-            for (int i=0; i< employees.length; i++);
-            if ( employees [i] !=null) {
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i] != null) {
                 return i;
             }
-            throw new RuntimeException( " Нет ни одного работника ");
+        }
+        throw new RuntimeException(" Нет ни одного работника ");
     }
         public Employee getEmployeeWithMinSalary () {
-        Employee employeeWithMinSalary = employees[getFirstNotNullSalaryIndex];
+        Employee employeeWithMinSalary = employees[getFirstNotNullSalaryIndex()];
         for (int i=getFirstNotNullSalaryIndex()+1; i<employees.length;i++) {
             if (employees[i]!=null&&employees[i].getSalary()<employeeWithMinSalary.getSalary()) {
                 employeeWithMinSalary=employees[i];
@@ -63,7 +64,7 @@ public class EmployeesBook {
         return employeeWithMinSalary;
     }
         public Employee getEmployeeWithMaxSalary () {
-        Employee employeeWithMaxSalary = employees[getFirstNotNullSalaryIndex];
+        Employee employeeWithMaxSalary = employees[getFirstNotNullSalaryIndex()];
         for (int i=getFirstNotNullSalaryIndex()+1; i<employees.length;i++) {
             if (employees[i]!=null&&employees[i].getSalary()>employeeWithMaxSalary.getSalary()) {
                 employeeWithMaxSalary=employees[i];
